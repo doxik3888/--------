@@ -1,11 +1,27 @@
-/* .background{
-    ba
-} */
 
 *{
     margin: 0;
     padding: 0;
     border: 0;
+}
+/* body {
+    width: 90vw ;
+} */
+
+
+
+footer{ 
+    display: flex;
+    justify-content: space-around;
+    height: 10vh;
+    
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
 
 .background{
@@ -21,9 +37,16 @@
     margin-bottom: 1vh;
 }
 
+.img_2{
+    border-radius: 10vw;
+    padding: 5%;
+    width: 90%;
+    height: 100vh;
+
+}
 
 header{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -31,11 +54,19 @@ header{
     justify-content: center;
 }
 
+.head-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+}
+
 .content{
     width: 20vw;
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
     padding: 60px 100px;
 
     border: 2px solid blue;
@@ -45,4 +76,51 @@ header{
 .avatar{
     width: 50px;
     height: 50px;
+}
+
+.about-text{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.game{
+    padding-left:5vw ;
+    margin-bottom: 8vh;
+}
+.card{
+    display:flex;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    border-radius: 1vw;
+    box-shadow: 13px 9px 38px rgba(0, 0, 0, 0.31), 4px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.futers-list{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+}
+
+.diferend{
+    display:flex;
+    width: 12vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    border-radius: 1vw;
+    box-shadow: 13px 9px 38px rgba(0, 0, 0, 0.31), 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
+}
+.comment{
+    padding: 1.5vh;
+
 }
