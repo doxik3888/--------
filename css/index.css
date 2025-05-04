@@ -210,3 +210,44 @@ link{
 .futers{
     margin-bottom: 20vh ;
 }
+
+.gallery-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    gap: 10px;
+    min-width: calc( var(--total-item)*18vw)
+}
+.gallery-item{
+    flex-grow: 1;
+    height: 100%;
+    border-radius: 1vw;
+    background-size: cover;
+    background-position: center;
+
+    transition: 
+        flex-grow 600ms ease-out,
+        transform 400ms,
+        box-shadow 400ms
+    
+    
+    ;
+}
+
+.gallery-item:not(.active):hover{
+    transform: translateY(-20px);
+    box-shadow: 8px 10px 75px 5px rgba(34, 60, 80, 0.6);
+    cursor: pointer;
+}
+
+.gallery-item.active{
+    flex-grow: var(--total-item)    ;
+}
