@@ -62,3 +62,29 @@ function initGallery(){
 }
 
 document.addEventListener("DOMContentLoaded",initGallery)
+
+const themeChange = document.querySelector(".theme-change")
+themeChange.addEventListener("click", ()=>{
+    let isLight = localStorage.getItem("theme") == "light"
+
+    if (isLight) {
+        localStorage.setItem("theme", "dark")
+        themeChange.innerHTML ='<i class="fas fa-moon"></i>'
+        document.documentElement.style.setProperty("--primary","rgb(7, 85, 11)")
+        document.documentElement.style.setProperty("--secondary","rgb(21, 117, 21)")
+        document.documentElement.style.setProperty("--thirth","#344C11")
+        document.documentElement.style.setProperty("--backgrColor","rgb(37, 37, 37)")
+        document.documentElement.style.setProperty("--textColor","white")
+        document.documentElement.style.setProperty("--light","#f2f2f2")
+    } else{
+        localStorage.setItem("theme", "light")
+        themeChange.innerHTML ='<i class="fas fa-sun"></i>'
+        document.documentElement.style.setProperty("--primary","#AEC09A")
+        document.documentElement.style.setProperty("--secondary","#344C11")
+        document.documentElement.style.setProperty("--thirth","#344C11")
+        document.documentElement.style.setProperty("--backgrColor","white")
+        document.documentElement.style.setProperty("--textColor","black")
+        document.documentElement.style.setProperty("--light","#f2f2f2")
+    }
+}
+)

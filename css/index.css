@@ -1,5 +1,17 @@
-
+:root{
+    --primary:  #AEC09A;
+    --secondary:    #344C11;
+    --thirth:   #344C11;
+    --backgrColor:  white;
+    --textColor:    black;
+    --light:    #f2f2f2;
+    --butbackstart:rgba(255, 255, 255, 0.3);
+    --butbackactive:rgba(255, 255, 255, 0.4)
+}
 *{
+    transition: 
+        background-color 200ms ease,
+        transform 50ms ease;
     margin: 0;
     padding: 0;
     border: 0;
@@ -9,6 +21,12 @@
     width: 90vw ;
 } */
 
+main{
+    color: var(--textColor);
+    background-color:  var(--backgrColor);;
+}
+header{    color: var(--textColor);
+    background-color:  var(--backgrColor);;}
 .layers_container{
     height: 100vh;
     transform-style: preserve-3d;
@@ -38,7 +56,7 @@ footer{
     justify-content: space-between;
     height: 24vh;
     background: linear-gradient(to bottom right, #344C11, #778D45); ;
-    color: #AEC09A;
+    color: var(--primary);
 }
 
 .contacts{
@@ -99,7 +117,7 @@ header{
 
 .content{
     background-color: rgba(255, 255, 255, 0.2);
-    width: 20vw;
+    width: 18vw;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -195,7 +213,7 @@ h1{
     padding-right: 10vw;
 }
 
-link{
+.link{
     display: flex;
     flex-direction: row;
 
@@ -250,4 +268,35 @@ link{
 
 .gallery-item.active{
     flex-grow: var(--total-item)    ;
+}
+
+.theme-change{
+    width: 5vw;
+    height: 5vh;
+
+    color: var(--light);
+    background-color: var(--butbackstart);
+    border: 2px solid var(--light);
+    border-radius: 2.5vw;
+
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 
+        background-color 200ms ease
+        transform 50ms ease
+}
+
+.theme-change:hover{
+    background-color: var(--butbackactive);
+}
+
+.theme-change:active{
+    transform: translateY(2px);
 }
