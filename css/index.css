@@ -300,3 +300,52 @@ h1{
 .theme-change:active{
     transform: translateY(2px);
 }
+
+.title{
+    margin-left: 3vw;
+    text-align: left;
+}
+
+.music{
+    display: flex;
+    background-color: lightgray;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    padding: 50px;
+    border-radius: 2vw;
+}
+
+.sound-avatar{
+    width: 15vw;
+    height: 15vw;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.title-music{
+
+}
+
+.compositor{
+    margin-top: 0.5vh;
+}
+
+.play{
+    margin-top: 1vh;
+    width: 3vw;
+    height: 3vw;
+    border: 2px solid black;
+    border-radius: 50%;
+
+}
+
+.line{
+    margin-top: 2vh;
+    width: 15vw;
+    height: 1vh;
+    background-color: gray;
+    border-radius: 0.5vh;
+}

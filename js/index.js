@@ -88,3 +88,32 @@ themeChange.addEventListener("click", ()=>{
     }
 }
 )
+
+function initPlayer(){
+    const btn =document.querySelector(".play")
+    const audio = document.getElementById(".audioPlayer")
+    
+    btn.addEventListener("click", () =>{
+        if (audio.paused) {
+            audio.play()
+            btn.innerHTML = '<i class="fas fa-pause"><i>'
+        } else {
+            audio.pause()
+            btn.innerHTML = '<i class="fas fa-play"><i>'
+        }
+    })
+
+    const time = document.querySelector(".time")
+    audio.addEventListener("timeupdate", () =>{
+        let minutes = Math.floor(audio.currentTime / 60)
+        let seconds = Math.floor(audio.currentTime % 60).toString().padStart(2, "0")
+        let maxMinutes = Math.floor(audio.duration / 60)
+        let maxSeconds = Math.floor(audio.duration % 60).toString.padStart(2, "0")
+        time.innerHTML = '${minute}:${seconds} / ${maxMinutes}:${maxSeconds}'
+    })
+}
+
+
+
+document.addEventListener("DOMContentLoaded", initPlayer)
+
