@@ -76,6 +76,8 @@ themeChange.addEventListener("click", ()=>{
         document.documentElement.style.setProperty("--backgrColor","rgb(37, 37, 37)")
         document.documentElement.style.setProperty("--textColor","white")
         document.documentElement.style.setProperty("--light","#f2f2f2")
+        document.documentElement.style.setProperty("--musicback","darkgray")
+
     } else{
         localStorage.setItem("theme", "light")
         themeChange.innerHTML ='<i class="fas fa-sun"></i>'
@@ -85,31 +87,39 @@ themeChange.addEventListener("click", ()=>{
         document.documentElement.style.setProperty("--backgrColor","white")
         document.documentElement.style.setProperty("--textColor","black")
         document.documentElement.style.setProperty("--light","#f2f2f2")
+        document.documentElement.style.setProperty("--musicback","lightgray")
     }
 }
 )
 
 function initPlayer(){
-    const btn =document.querySelector(".play")
-    const audio = document.getElementById(".audioPlayer")
+    const btn = document.querySelector(".play")
+    const audio = document.getElementById("audioPlayer")
+    const progres = document.querySelector(".progres")
     
     btn.addEventListener("click", () =>{
         if (audio.paused) {
             audio.play()
-            btn.innerHTML = '<i class="fas fa-pause"><i>'
+            btn.innerHTML = '<i class="fas fa-pause"></i>'
         } else {
             audio.pause()
-            btn.innerHTML = '<i class="fas fa-play"><i>'
+            btn.innerHTML = '<i class="fas fa-play"></i>'
         }
     })
 
     const time = document.querySelector(".time")
     audio.addEventListener("timeupdate", () =>{
-        let minutes = Math.floor(audio.currentTime / 60)
+        progres.style.width = `${audio.currentTime / audio.duration * 100}%`
+        let minute = Math.floor(audio.currentTime / 60)
         let seconds = Math.floor(audio.currentTime % 60).toString().padStart(2, "0")
         let maxMinutes = Math.floor(audio.duration / 60)
-        let maxSeconds = Math.floor(audio.duration % 60).toString.padStart(2, "0")
-        time.innerHTML = '${minute}:${seconds} / ${maxMinutes}:${maxSeconds}'
+        let maxSeconds = Math.floor(audio.duration % 60).toString().padStart(2, "0")
+        time.innerHTML = `${minute}:${seconds}/ ${maxMinutes}:${maxSeconds}`
+    })
+    document.querySelector(".line").addEventListener("click", (e) =>{
+        const rect = e.target.getBoundingClientRect()
+        const pos = (e.clientX - rect.left)/ rect.width
+        audio.currentTime = pos * audio.duration
     })
 }
 
